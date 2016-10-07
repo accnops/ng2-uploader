@@ -68,6 +68,7 @@ export class Ng2Uploader {
   withCredentials: boolean = false;
   multiple: boolean = false;
   maxUploads: number = 3;
+  maxSize: number = null;
   data: { [index: string]: any } = {};
   autoUpload: boolean = true;
   multipart: boolean = true;
@@ -90,6 +91,7 @@ export class Ng2Uploader {
     this.withCredentials = options.withCredentials != null ? options.withCredentials : this.withCredentials;
     this.multiple = options.multiple != null ? options.multiple : this.multiple;
     this.maxUploads = options.maxUploads != null ? options.maxUploads : this.maxUploads;
+    this.maxSize = options.maxSize != null ? options.maxSize : this.maxSize;
     this.data = options.data != null ? options.data : this.data;
     this.autoUpload = options.autoUpload != null ? options.autoUpload : this.autoUpload;
     this.multipart = options.multipart != null ? options.multipart : this.multipart;
@@ -114,6 +116,8 @@ export class Ng2Uploader {
   };
 
   uploadFile(file: any): void {
+    console.log(file);
+
     let xhr = new XMLHttpRequest();
     let form = new FormData();
     form.append(this.fieldName, file, file.name);
