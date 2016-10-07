@@ -116,7 +116,17 @@ export class Ng2Uploader {
   };
 
   uploadFile(file: any): void {
-    console.log(file);
+    let uploadingFile = new UploadedFile(
+      this.generateRandomIndex(),
+      file.name,
+      file.size
+    );
+    
+    if(this.maxSize && file.size > this.maxSize) {
+      uploadingFile.setError();
+      this._emitter.emit(uploadingFile);
+      return;
+    }
 
     let xhr = new XMLHttpRequest();
     let form = new FormData();
@@ -125,12 +135,6 @@ export class Ng2Uploader {
     Object.keys(this.data).forEach(k => {
       form.append(k, this.data[k]);
     });
-
-    let uploadingFile = new UploadedFile(
-      this.generateRandomIndex(),
-      file.name,
-      file.size
-    );
 
     let queueIndex = this._queue.indexOf(file);
 
