@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "./scripts/clean.sh",
     "dev": "tsc --watch",
-    "prepublish": "tsc"
+    "prepublish": "ngc"
   },
   "repository": {
     "type": "git",
