@@ -124,7 +124,6 @@ export class Ng2Uploader {
     
     if(this.maxSize && file.size > this.maxSize) {
       uploadingFile.setError();
-      this._queue.splice(this._queue.indexOf(file), 1);
       this._emitter.emit(uploadingFile);
       return;
     }
