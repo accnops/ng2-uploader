@@ -15,7 +15,7 @@
   },
 
   "files": [
-    "ng2-uploader.ts",
+    "index.ts",
     "typings/index.d.ts"
   ],
 

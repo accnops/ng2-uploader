@@ -11,4 +11,4 @@ exports.UPLOAD_DIRECTIVES = [
     ng_file_drop_1.NgFileDropDirective,
     ng_file_select_1.NgFileSelectDirective
 ];
-//# sourceMappingURL=ng2-uploader.js.map
+//# sourceMappingURL=index.js.map
