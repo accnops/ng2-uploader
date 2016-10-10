@@ -3,8 +3,8 @@
   "description": "Angular2 File Uploader",
   "version": "1.2.0",
   "license": "MIT",
-  "main": "ng2-uploader.ts",
-  "typings": "ng2-uploader.d.ts",
+  "main": "./ng2-uploader.ts",
+  "typings": "./ng2-uploader.d.ts",
   "author": "Jan Kuri <jkuri88@gmail.com>",
   "scripts": {
     "clean": "./scripts/clean.sh",
