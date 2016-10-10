@@ -99,18 +99,14 @@ var Ng2Uploader = (function () {
     ;
     Ng2Uploader.prototype.uploadFile = function (file) {
         var _this = this;
-        var uploadingFile = new UploadedFile(this.generateRandomIndex(), file.name, file.size);
-        if (this.maxSize && file.size > this.maxSize) {
-            uploadingFile.setError();
-            this._emitter.emit(uploadingFile);
-            return;
-        }
+        console.log(file);
         var xhr = new XMLHttpRequest();
         var form = new FormData();
         form.append(this.fieldName, file, file.name);
         Object.keys(this.data).forEach(function (k) {
             form.append(k, _this.data[k]);
         });
+        var uploadingFile = new UploadedFile(this.generateRandomIndex(), file.name, file.size);
         var queueIndex = this._queue.indexOf(file);
         var time = new Date().getTime();
         var load = 0;
