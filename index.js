@@ -4,7 +4,7 @@ function __export(m) {
 }
 var ng_file_select_1 = require('./src/directives/ng-file-select');
 var ng_file_drop_1 = require('./src/directives/ng-file-drop');
-__export(require('./src/services/ng2-uploader'));
+__export(require('./src/services/ng-uploader'));
 __export(require('./src/directives/ng-file-select'));
 __export(require('./src/directives/ng-file-drop'));
 exports.UPLOAD_DIRECTIVES = [

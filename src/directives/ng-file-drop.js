@@ -1,6 +1,6 @@
 "use strict";
 var core_1 = require('@angular/core');
-var ng2_uploader_1 = require('../services/ng2-uploader');
+var ng_uploader_1 = require('../services/ng-uploader');
 var NgFileDropDirective = (function () {
     function NgFileDropDirective(el) {
         var _this = this;
@@ -9,7 +9,7 @@ var NgFileDropDirective = (function () {
         this.onPreviewData = new core_1.EventEmitter();
         this.onFileOver = new core_1.EventEmitter();
         this.files = [];
-        this.uploader = new ng2_uploader_1.Ng2Uploader();
+        this.uploader = new ng_uploader_1.NgUploader();
         setTimeout(function () {
             _this.uploader.setOptions(_this.options);
         });

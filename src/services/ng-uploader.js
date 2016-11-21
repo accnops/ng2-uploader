@@ -44,8 +44,8 @@ var UploadedFile = (function () {
     return UploadedFile;
 }());
 exports.UploadedFile = UploadedFile;
-var Ng2Uploader = (function () {
-    function Ng2Uploader() {
+var NgUploader = (function () {
+    function NgUploader() {
         this.cors = false;
         this.withCredentials = false;
         this.multiple = false;
@@ -67,7 +67,7 @@ var Ng2Uploader = (function () {
         this._emitter = new core_1.EventEmitter();
         this._previewEmitter = new core_1.EventEmitter();
     }
-    Ng2Uploader.prototype.setOptions = function (options) {
+    NgUploader.prototype.setOptions = function (options) {
         this.url = options.url != null ? options.url : this.url;
         this.cors = options.cors != null ? options.cors : this.cors;
         this.withCredentials = options.withCredentials != null ? options.withCredentials : this.withCredentials;
@@ -89,7 +89,7 @@ var Ng2Uploader = (function () {
             this.maxUploads = 1;
         }
     };
-    Ng2Uploader.prototype.uploadFilesInQueue = function () {
+    NgUploader.prototype.uploadFilesInQueue = function () {
         var _this = this;
         var newFiles = this._queue.filter(function (f) { return !f.uploading; });
         newFiles.forEach(function (f) {
@@ -97,7 +97,7 @@ var Ng2Uploader = (function () {
         });
     };
     ;
-    Ng2Uploader.prototype.uploadFile = function (file) {
+    NgUploader.prototype.uploadFile = function (file) {
         var _this = this;
         var uploadingFile = new UploadedFile(this.generateRandomIndex(), file.name, file.size);
         if (this.maxSize && file.size > this.maxSize) {
@@ -172,7 +172,7 @@ var Ng2Uploader = (function () {
         }
         xhr.send(form);
     };
-    Ng2Uploader.prototype.addFilesToQueue = function (files) {
+    NgUploader.prototype.addFilesToQueue = function (files) {
         var _this = this;
         files.forEach(function (file, i) {
             if (_this.isFile(file) && !_this.inQueue(file)) {
@@ -186,7 +186,7 @@ var Ng2Uploader = (function () {
             this.uploadFilesInQueue();
         }
     };
-    Ng2Uploader.prototype.createFileUrl = function (file) {
+    NgUploader.prototype.createFileUrl = function (file) {
         var _this = this;
         var reader = new FileReader();
         reader.addEventListener('load', function () {
@@ -194,28 +194,28 @@ var Ng2Uploader = (function () {
         });
         reader.readAsDataURL(file);
     };
-    Ng2Uploader.prototype.removeFileFromQueue = function (i) {
+    NgUploader.prototype.removeFileFromQueue = function (i) {
         this._queue.splice(i, 1);
     };
-    Ng2Uploader.prototype.clearQueue = function () {
+    NgUploader.prototype.clearQueue = function () {
         this._queue = [];
     };
-    Ng2Uploader.prototype.getQueueSize = function () {
+    NgUploader.prototype.getQueueSize = function () {
         return this._queue.length;
     };
-    Ng2Uploader.prototype.inQueue = function (file) {
+    NgUploader.prototype.inQueue = function (file) {
         var fileInQueue = this._queue.filter(function (f) { return f === file; });
         return fileInQueue.length ? true : false;
     };
-    Ng2Uploader.prototype.isFile = function (file) {
+    NgUploader.prototype.isFile = function (file) {
         return file !== null && (file instanceof Blob || (file.name && file.size));
     };
-    Ng2Uploader.prototype.generateRandomIndex = function () {
+    NgUploader.prototype.generateRandomIndex = function () {
         return Math.random().toString(36).substring(7);
     };
-    return Ng2Uploader;
+    return NgUploader;
 }());
-exports.Ng2Uploader = Ng2Uploader;
+exports.NgUploader = NgUploader;
 function humanizeBytes(bytes) {
     if (bytes === 0) {
         return '0 Byte';
@@ -225,4 +225,4 @@ function humanizeBytes(bytes) {
     var i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i] + '/s';
 }
-//# sourceMappingURL=ng2-uploader.js.map
+//# sourceMappingURL=ng-uploader.js.map

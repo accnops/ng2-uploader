@@ -20,7 +20,7 @@ export declare class UploadedFile {
     setAbort(): void;
     onFinished(status: number, statusText: string, response: string): void;
 }
-export declare class Ng2Uploader {
+export declare class NgUploader {
     url: string;
     cors: boolean;
     withCredentials: boolean;

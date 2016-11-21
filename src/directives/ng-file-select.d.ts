@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter } from '@angular/core';
-import { Ng2Uploader } from '../services/ng2-uploader';
+import { NgUploader } from '../services/ng-uploader';
 export declare class NgFileSelectDirective {
     el: ElementRef;
     events: EventEmitter<any>;
@@ -8,7 +8,7 @@ export declare class NgFileSelectDirective {
     _options: any;
     options: any;
     files: any[];
-    uploader: Ng2Uploader;
+    uploader: NgUploader;
     constructor(el: ElementRef);
     filterFilesByExtension(): void;
     onChange(): void;

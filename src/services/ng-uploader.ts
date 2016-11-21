@@ -62,7 +62,7 @@ export class UploadedFile {
   }
 }
 
-export class Ng2Uploader {
+export class NgUploader {
   url: string;
   cors: boolean = false;
   withCredentials: boolean = false;

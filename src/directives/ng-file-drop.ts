@@ -6,7 +6,7 @@ import {
   Output,
   HostListener
 } from '@angular/core';
-import {Ng2Uploader} from '../services/ng2-uploader';
+import {NgUploader} from '../services/ng-uploader';
 
 @Directive({
   selector: '[ngFileDrop]'
@@ -31,10 +31,10 @@ export class NgFileDropDirective {
   }
 
   files: any[] = [];
-  uploader: Ng2Uploader;
+  uploader: NgUploader;
 
   constructor(public el: ElementRef) {
-    this.uploader = new Ng2Uploader();
+    this.uploader = new NgUploader();
     setTimeout(() => {
       this.uploader.setOptions(this.options);
     });

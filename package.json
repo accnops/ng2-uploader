@@ -3,13 +3,13 @@
   "description": "Angular2 File Uploader",
   "version": "1.2.0",
   "license": "MIT",
-  "main": "ng2-uploader.ts",
-  "typings": "ng2-uploader.d.ts",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "author": "Jan Kuri <jkuri88@gmail.com>",
   "scripts": {
     "clean": "./scripts/clean.sh",
     "dev": "tsc --watch",
-    "prepublish": "ngc -p tsconfig.json"
+    "bundle": "ngc -p tsconfig-aot.json"
   },
   "repository": {
     "type": "git",
